@@ -125,6 +125,14 @@ button {
   background-image: url(../img/women-line.svg);
 }
 
+.men .header__button-gender_men{
+  border: 1px solid #1178B2;
+}
+
+.women .header__button-gender_women{
+  border: 1px solid #C300C7;
+}
+
 .card {
   flex-grow: 1;
   padding: 32px 0 15px;
@@ -149,12 +157,21 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Bad Script";
+ text-align: center;
   font-style: italic;
   font-weight: 400;
   font-size: max(3em, min(calc(100vw * 3 / 140), 6em));
   line-height: 1.6;
   color: #000000;
+}
+
+.women .card__text{
+  font-family: "Bad Script";
+}
+
+.men .card__text{
+  font-family: "Open Sans";
+  font-weight: 700;
 }
 
 .footer{
@@ -176,6 +193,11 @@ button {
 .footer__social{
     display: flex;
     gap: 16px;
+}
+
+.footer__link svg path:hover{
+fill: #C300C7;
+transition: all ease 0.5s;
 }
 
 @media (max-width: 880px ){
