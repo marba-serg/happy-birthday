@@ -195,7 +195,7 @@ button {
     gap: 16px;
 }
 
-.footer__link svg path:hover{
+.footer__link svg:hover path{
 fill: #C300C7;
 transition: all ease 0.5s;
 }

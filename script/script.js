@@ -65,8 +65,8 @@ const changeText = () => {
     state.text = getRandomArr(data.text[state.gender]);
    
     cardText.innerHTML = state.text.replaceAll('\n', '<br>');
-   })
-}
+   });
+};
 
 const changeImage = () => {
     getData().then(data => {
@@ -75,14 +75,38 @@ const changeImage = () => {
             cardText.style.color = 'white';
         } else cardText.style.color = 'black';
         cardImage.src = `img/${state.photo}`;
-    })
- }
+    });
+ };
 
 buttonMen.addEventListener('click', changeToMen);
 buttonWomen.addEventListener('click', changeToWomen);
-buttonText.addEventListener('click', changeText)
-buttonImage.addEventListener('click', changeImage)
+buttonText.addEventListener('click', changeText);
+buttonImage.addEventListener('click', changeImage);
+
+const cardWrapper = document.querySelector('.card_wrapper');
+cardWrapper.addEventListener('dblclick', () => {
+    const newWindow = window.open(
+    '',
+    '',
+    'width = 840, height = 520')
+    
+    html2canvas(cardWrapper).then(canvas => {
+        canvas.style.maxWidth = '100%';
+        canvas.style.height = 'auto';
+        newWindow.document.body.prepend(canvas);
+    })
+})
+
+
+// document.querySelector("#capture").addEventListener('dblclick', html2canvas(document.querySelector("#capture")).then(canvas => {
+//     document.body.appendChild(canvas);
+// }));
+
+
 getDataToCard();
+
+
+
 
 
 
